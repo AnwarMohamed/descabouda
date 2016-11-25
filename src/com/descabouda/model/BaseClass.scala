@@ -3,11 +3,11 @@ package com.descabouda.model
 import java.util
 
 class BaseClass {
-  var minor_version: Short = null
-  var major_version: Short = null
-  var access_flags: Short = null
-  var this_class: Short = null
-  var super_class: Short = null
+  var minor_version: Integer = null
+  var major_version: Integer = null
+  var access_flags: Integer = null
+  var this_class: Integer = null
+  var super_class: Integer = null
 
   val constants = new util.LinkedList[BaseConstant]()
   val interfaces = new util.LinkedList[BaseInterface]()

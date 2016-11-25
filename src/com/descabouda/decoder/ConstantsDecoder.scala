@@ -47,38 +47,38 @@ class ConstantsDecoder {
   def decodeClass(classStream: ClassInputStream): BaseConstant = {
     val constant = new ClassConstant()
     constant.tag = CONSTANT_Class
-    constant.name_index = classStream.readShort()
+    constant.name_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeFieldRef(classStream: ClassInputStream): BaseConstant = {
     val constant = new FieldRefConstant()
     constant.tag = CONSTANT_FieldRef
-    constant.class_index = classStream.readShort()
-    constant.name_and_type_index = classStream.readShort()
+    constant.class_index = classStream.readUnsignedShort()
+    constant.name_and_type_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeMethodRef(classStream: ClassInputStream): BaseConstant = {
     val constant = new MethodRefConstant()
     constant.tag = CONSTANT_MethodRef
-    constant.class_index = classStream.readShort()
-    constant.name_and_type_index = classStream.readShort()
+    constant.class_index = classStream.readUnsignedShort()
+    constant.name_and_type_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeInterfaceMethodRef(classStream: ClassInputStream): BaseConstant = {
     val constant = new InterfaceMethodRefConstant()
     constant.tag = CONSTANT_InterfaceMethodRef
-    constant.class_index = classStream.readShort()
-    constant.name_and_type_index = classStream.readShort()
+    constant.class_index = classStream.readUnsignedShort()
+    constant.name_and_type_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeString(classStream: ClassInputStream): BaseConstant = {
     val constant = new StringConstant()
     constant.tag = CONSTANT_String
-    constant.string_index = classStream.readShort()
+    constant.string_index = classStream.readUnsignedShort()
     constant
   }
 
@@ -115,15 +115,15 @@ class ConstantsDecoder {
   def decodeNameAndType(classStream: ClassInputStream): BaseConstant = {
     val constant = new NameAndTypeConstant()
     constant.tag = CONSTANT_NameAndType
-    constant.name_index = classStream.readShort()
-    constant.descriptor_index = classStream.readShort()
+    constant.name_index = classStream.readUnsignedShort()
+    constant.descriptor_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeUtf8(classStream: ClassInputStream): BaseConstant = {
     val constant = new Utf8Constant()
     constant.tag = CONSTANT_Utf8
-    constant.length = classStream.readShort()
+    constant.length = classStream.readUnsignedShort()
     constant.bytes = new Array[Byte](constant.length)
 
     classStream.read(constant.bytes)
@@ -134,22 +134,22 @@ class ConstantsDecoder {
     val constant = new MethodHandleConstant()
     constant.tag = CONSTANT_MethodHandle
     constant.reference_kind = classStream.readByte()
-    constant.reference_index = classStream.readShort()
+    constant.reference_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeMethodType(classStream: ClassInputStream): BaseConstant = {
     val constant = new MethodTypeConstant()
     constant.tag = CONSTANT_MethodType
-    constant.descriptor_index = classStream.readShort()
+    constant.descriptor_index = classStream.readUnsignedShort()
     constant
   }
 
   def decodeInvokeDynamic(classStream: ClassInputStream): BaseConstant = {
     val constant = new InvokeDynamicConstant()
     constant.tag = CONSTANT_InvokeDynamic
-    constant.bootstrap_method_attr_index = classStream.readShort()
-    constant.name_and_type_index = classStream.readShort()
+    constant.bootstrap_method_attr_index = classStream.readUnsignedShort()
+    constant.name_and_type_index = classStream.readUnsignedShort()
     constant
   }
 }

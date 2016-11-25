@@ -6,10 +6,10 @@ import com.descabouda.model.{BaseField, BaseInterface, BaseMethod}
 class MethodsDecoder {
   def decode(classStream: ClassInputStream): BaseMethod = {
     val method = new BaseMethod()
-    method.access_flags = classStream.readShort()
-    method.name_index = classStream.readShort()
-    method.descriptor_index = classStream.readShort()
-    method.attributes_count = classStream.readShort()
+    method.access_flags = classStream.readUnsignedShort()
+    method.name_index = classStream.readUnsignedShort()
+    method.descriptor_index = classStream.readUnsignedShort()
+    method.attributes_count = classStream.readUnsignedShort()
 
     decodeAttributes(classStream, method)
   }
@@ -17,7 +17,7 @@ class MethodsDecoder {
   def decodeAttributes(classStream: ClassInputStream, method: BaseMethod): BaseMethod = {
     val attributeDecoder = new AttributesDecoder()
 
-    for (i <- 0 to method.attributes_count) {
+    for (i <- 0 until method.attributes_count) {
       method.attributes.add(attributeDecoder.decode(classStream))
     }
 

@@ -23,9 +23,7 @@ class ClassDecoder {
     decodeVersion(classStream, classModel)
 
     decodeConstantPool(classStream, classModel)
-
-    decodeAccessFlags(classStream, classModel)
-    decodeClassMeta(classStream, classModel)
+    decodeMetaData(classStream, classModel)
 
     decodeInterfaces(classStream, classModel)
     decodeFields(classStream, classModel)
@@ -45,36 +43,54 @@ class ClassDecoder {
     classModel.major_version = classStream.readShort()
   }
 
-  def decodeAccessFlags(classStream: ClassInputStream, classModel: BaseClass) = {
-
-  }
-
-  def decodeClassMeta(classStream: ClassInputStream, classModel: BaseClass) = {
-
+  def decodeClassMetaData(classStream: ClassInputStream, classModel: BaseClass) = {
+    classModel.access_flags = classStream.readShort()
+    classModel.this_class = classStream.readShort()
+    classModel.super_class = classStream.readShort()
   }
 
   def decodeConstantPool(classStream: ClassInputStream, classModel: BaseClass) = {
     val constantsCount = classStream.readShort()
-    val constantDecoder = new ConstantDecoder()
+    val constantDecoder = new ConstantsDecoder()
 
-    for (i <- 0 to constantsCount) {
+    for (i <- 0 until constantsCount) {
       classModel.constants.add(constantDecoder.decode(classStream))
     }
   }
 
   def decodeInterfaces(classStream: ClassInputStream, classModel: BaseClass) = {
+    val interfacesCount = classStream.readShort()
+    val interfacesDecoder = new InterfacesDecoder()
 
+    for (i <- 0 to interfacesCount) {
+      classModel.interfaces.add(interfacesDecoder.decode(classStream))
+    }
   }
 
   def decodeFields(classStream: ClassInputStream, classModel: BaseClass) = {
+    val fieldsCount = classStream.readShort()
+    val fieldsDecoder = new FieldsDecoder()
 
+    for (i <- 0 to fieldsCount) {
+      classModel.fields.add(fieldsDecoder.decode(classStream))
+    }
   }
 
   def decodeMethods(classStream: ClassInputStream, classModel: BaseClass) = {
+    val methodsCount = classStream.readShort()
+    val methodsDecoder = new MethodsDecoder()
 
+    for (i <- 0 to methodsCount) {
+      classModel.methods.add(methodsDecoder.decode(classStream))
+    }
   }
 
   def decodeAttributes(classStream: ClassInputStream, classModel: BaseClass) = {
+    val attributesCount = classStream.readShort()
+    val attributesDecoder = new AttributesDecoder()
 
+    for (i <- 0 to attributesCount) {
+      classModel.attributes.add(attributesDecoder.decode(classStream))
+    }
   }
 }

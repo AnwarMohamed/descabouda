@@ -4,7 +4,7 @@ import com.descabouda.input.ClassInputStream
 import com.descabouda.model.BaseConstant
 import com.descabouda.model.constants._
 
-class ConstantDecoder {
+class ConstantsDecoder {
 
   final val CONSTANT_Class: Byte = 7
   final val CONSTANT_FieldRef: Byte = 9

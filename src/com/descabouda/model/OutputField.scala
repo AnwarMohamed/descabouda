@@ -1,5 +1,7 @@
 package com.descabouda.model
 
+import java.util
+
 class OutputField {
   var publicFlag: Boolean = false
   var privateFlag: Boolean = false
@@ -12,4 +14,6 @@ class OutputField {
   var enumFlag: Boolean = false
 
   var name: String = null
+
+  var attributes = Map[String, OutputAttribute]()
 }

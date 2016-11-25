@@ -38,6 +38,15 @@ class MethodGenerator {
     if (method.descriptorIndex > 0)
       outputMethod.descriptor = baseClass.getUtf8(method.descriptorIndex - 1)
 
+    generateAttributes(baseClass, method, outputMethod)
     outputMethod
+  }
+
+  def generateAttributes(baseClass: BaseClass, baseMethod: BaseMethod, method: OutputMethod): Unit = {
+    val attributeGenerator = new AttributeGenerator()
+    baseMethod.attributes.forEach((attribute) => {
+      val outputAttribute = attributeGenerator.generate(baseClass, attribute)
+      method.attributes += outputAttribute.name -> outputAttribute
+    })
   }
 }

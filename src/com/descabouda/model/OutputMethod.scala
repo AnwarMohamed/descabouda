@@ -1,5 +1,7 @@
 package com.descabouda.model
 
+import java.util
+
 class OutputMethod {
   var publicFlag: Boolean = false
   var privateFlag: Boolean = false
@@ -16,4 +18,6 @@ class OutputMethod {
 
   var name: String = null
   var descriptor: String = null
+
+  var attributes = Map[String, OutputAttribute]()
 }

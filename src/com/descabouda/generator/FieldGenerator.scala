@@ -1,6 +1,6 @@
 package com.descabouda.generator
 
-import com.descabouda.model.{BaseClass, BaseField, OutputClass, OutputField}
+import com.descabouda.model._
 
 class FieldGenerator {
   final val ACC_PUBLIC: Short = 0x0001	  // Declared public; may be accessed from outside its package.
@@ -29,6 +29,15 @@ class FieldGenerator {
     if (field.nameIndex > 0)
       outputField.name = baseClass.getUtf8(field.nameIndex - 1)
 
+    generateAttributes(baseClass, field, outputField)
     outputField
+  }
+
+  def generateAttributes(baseClass: BaseClass, baseField: BaseField, field: OutputField): Unit = {
+    val attributeGenerator = new AttributeGenerator()
+    baseField.attributes.forEach((attribute) => {
+      val outputAttribute = attributeGenerator.generate(baseClass, attribute)
+      field.attributes += outputAttribute.name -> outputAttribute
+    })
   }
 }

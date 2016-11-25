@@ -23,6 +23,7 @@ class ClassGenerator {
     generateInterfaces(baseClass, outputClass)
     generateFields(baseClass, outputClass)
     generateMethods(baseClass, outputClass)
+    generateAttributes(baseClass, outputClass)
 
     outputClass
   }
@@ -53,14 +54,24 @@ class ClassGenerator {
   }
 
   def generateFields(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val fieldGenerator = new FieldGenerator()
     baseClass.fields.forEach((field) => {
-      outputClass.fields.add(new FieldGenerator().generate(baseClass, field))
+      outputClass.fields.add(fieldGenerator.generate(baseClass, field))
     })
   }
 
   def generateMethods(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val methodGenerator = new MethodGenerator()
     baseClass.methods.forEach((method) => {
-      outputClass.methods.add(new MethodGenerator().generate(baseClass, method))
+      outputClass.methods.add(methodGenerator.generate(baseClass, method))
+    })
+  }
+
+  def generateAttributes(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val attributeGenerator = new AttributeGenerator()
+    baseClass.attributes.forEach((attribute) => {
+      val outputAttribute = attributeGenerator.generate(baseClass, attribute)
+      outputClass.attributes += outputAttribute.name -> outputAttribute
     })
   }
 }

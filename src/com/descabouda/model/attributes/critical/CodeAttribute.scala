@@ -9,16 +9,16 @@ import com.descabouda.model.{BaseAttribute, BaseClass, OutputAttribute}
 class CodeAttribute extends OutputAttribute {
   name = "Code"
 
-  var maxStack: Integer = null
-  var maxLocals: Integer = null
+  var maxStack: Int = 0
+  var maxLocals: Int = 0
 
-  var codeLength: Integer = null
+  var codeLength: Int = 0
   var code: Array[Byte] = null
 
-  var exceptionTableLength: Integer = null
-  var exceptionTable = new util.ArrayList[ExceptionTable]()
+  var exceptionTableLength: Int = 0
+  var exceptionTable = new util.ArrayList[CodeExceptionTable]()
 
-  var attributesCount: Integer = null
+  var attributesCount: Int = 0
   var attributeInfo = new util.ArrayList[OutputAttribute]()
 
   override def fromStream(baseClass: BaseClass, baseAttribute: BaseAttribute): OutputAttribute = {
@@ -34,7 +34,7 @@ class CodeAttribute extends OutputAttribute {
     this.exceptionTableLength = infoStream.readUnsignedShort()
 
     for (i <- 0 until this.exceptionTableLength) {
-      val exceptionTable = new ExceptionTable()
+      val exceptionTable = new CodeExceptionTable()
 
       exceptionTable.startPc = infoStream.readUnsignedShort()
       exceptionTable.endPc = infoStream.readUnsignedShort()
@@ -59,9 +59,9 @@ class CodeAttribute extends OutputAttribute {
   }
 }
 
-class ExceptionTable {
-  var startPc: Integer = null
-  var endPc: Integer = null
-  var handlerPc: Integer = null
-  var catchType: Integer = null
+class CodeExceptionTable {
+  var startPc: Int = 0
+  var endPc: Int = 0
+  var handlerPc: Int = 0
+  var catchType: Int = 0
 }

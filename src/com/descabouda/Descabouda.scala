@@ -3,6 +3,7 @@ package com.descabouda
 import com.descabouda.decoder.ClassDecoder
 import com.descabouda.generator.ClassGenerator
 import com.descabouda.input.ClassInputStream
+import com.descabouda.output.SmaliPrinter
 import com.sun.org.apache.bcel.internal.generic.ClassGen
 
 object Descabouda {
@@ -19,6 +20,7 @@ object Descabouda {
     val baseClass = classDecoder.decode(classStream)
     val outputClass = classGenerator.generate(baseClass)
 
-    println(outputClass.name)
+    val smaliPrinter = new SmaliPrinter(outputClass)
+    smaliPrinter.printClass()
   }
 }

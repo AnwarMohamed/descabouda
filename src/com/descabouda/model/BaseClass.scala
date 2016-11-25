@@ -5,11 +5,11 @@ import java.util
 import com.descabouda.model.constants.{ClassConstant, Utf8Constant}
 
 class BaseClass {
-  var minorVersion: Integer = null
-  var majorVersion: Integer = null
-  var accessFlags: Integer = null
-  var thisClass: Integer = null
-  var superClass: Integer = null
+  var minorVersion: Int = 0
+  var majorVersion: Int = 0
+  var accessFlags: Int = 0
+  var thisClass: Int = 0
+  var superClass: Int = 0
 
   val constants = new util.ArrayList[BaseConstant]()
   val interfaces = new util.ArrayList[BaseInterface]()
@@ -17,7 +17,7 @@ class BaseClass {
   val methods = new util.ArrayList[BaseMethod]()
   val attributes = new util.ArrayList[BaseAttribute]()
 
-  def getConstant(index: Integer): BaseConstant = {
+  def getConstant(index: Int): BaseConstant = {
     if (index > 0 && index < constants.size()) {
       constants.get(index)
     }
@@ -25,15 +25,15 @@ class BaseClass {
     null
   }
 
-  def getClass(index: Integer): ClassConstant = {
+  def getClass(index: Int): ClassConstant = {
     constants.get(index).asInstanceOf[ClassConstant]
   }
 
-  def getClassName(index: Integer): String = {
+  def getClassName(index: Int): String = {
     getUtf8(getClass(index).nameIndex - 1)
   }
 
-  def getUtf8(index: Integer): String = {
+  def getUtf8(index: Int): String = {
     new String(constants.get(index).asInstanceOf[Utf8Constant].bytes)
   }
 }

@@ -5,7 +5,6 @@ import com.descabouda.model._
 
 
 class ClassGenerator {
-
   final val ACC_PUBLIC: Short = 0x0001	    // Declared public; may be accessed from outside its package.
   final val ACC_FINAL: Short = 0x0010	      // Declared final; no subclasses allowed.
   final val ACC_SUPER: Short = 0x0020	      // Treat superclass methods specially when invoked by the
@@ -18,6 +17,7 @@ class ClassGenerator {
 
   def generate(baseClass: BaseClass): OutputClass = {
     val outputClass = new OutputClass()
+    outputClass.raw = baseClass
 
     generateClass(baseClass, outputClass)
     generateInterfaces(baseClass, outputClass)

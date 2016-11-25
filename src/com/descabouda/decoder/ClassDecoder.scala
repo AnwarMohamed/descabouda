@@ -42,7 +42,7 @@ class ClassDecoder {
     val constantDecoder = new ConstantsDecoder()
 
     for (i <- 0 until constantsCount - 1) {
-      classModel.constants.add(constantDecoder.decode(classStream))
+      classModel.constants.add(constantDecoder.decode(classStream, classModel))
     }
   }
 

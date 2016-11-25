@@ -19,4 +19,5 @@ class OutputClass {
 
   var name: String = null
   var superName: String = null
+  var raw: BaseClass = null
 }

@@ -18,5 +18,7 @@ object Descabouda {
 
     val baseClass = classDecoder.decode(classStream)
     val outputClass = classGenerator.generate(baseClass)
+
+    println(outputClass.name)
   }
 }

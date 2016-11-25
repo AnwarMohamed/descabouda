@@ -3,5 +3,5 @@ package com.descabouda.model.constants
 import com.descabouda.model.BaseConstant
 
 class MethodTypeConstant extends BaseConstant {
-  var descriptor_index: Integer = null
+  var descriptorIndex: Integer = null
 }

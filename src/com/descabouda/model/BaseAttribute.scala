@@ -1,7 +1,7 @@
 package com.descabouda.model
 
 class BaseAttribute {
-  var attribute_name_index: Integer = null
-  var attribute_length: Integer = null
+  var attributeNameIndex: Integer = null
+  var attributeLength: Integer = null
   var info: Array[Byte] = null
 }

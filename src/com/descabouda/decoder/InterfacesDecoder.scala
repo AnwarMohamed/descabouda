@@ -6,7 +6,7 @@ import com.descabouda.model.BaseInterface
 class InterfacesDecoder {
   def decode(classStream: ClassInputStream): BaseInterface = {
     val interface = new BaseInterface()
-    interface.pool_index = classStream.readUnsignedShort()
+    interface.poolIndex = classStream.readUnsignedShort()
     interface
   }
 }

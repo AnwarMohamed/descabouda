@@ -1,5 +1,5 @@
 package com.descabouda.model
 
-class MethodModel {
+class BaseField {
 
 }

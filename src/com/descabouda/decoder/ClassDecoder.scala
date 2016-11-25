@@ -1,7 +1,7 @@
 package com.descabouda.decoder
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.{ClassModel, ConstantModel}
+import com.descabouda.model.{BaseClass, BaseConstant}
 
 class ClassDecoder {
 
@@ -16,8 +16,8 @@ class ClassDecoder {
   final val ACC_ENUM: Short = 0x4000	      // Declared as an enum type.
 
 
-  def decode(classStream: ClassInputStream): ClassModel = {
-    val classModel = new ClassModel()
+  def decode(classStream: ClassInputStream): BaseClass = {
+    val classModel = new BaseClass()
 
     decodeMagic(classStream, classModel)
     decodeVersion(classStream, classModel)
@@ -35,25 +35,25 @@ class ClassDecoder {
     classModel
   }
 
-  def decodeMagic(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeMagic(classStream: ClassInputStream, classModel: BaseClass) = {
     if (classStream.readInt() != 0xCAFEBABE)
       throw new ClassDecoderException("Invalid class magic")
   }
 
-  def decodeVersion(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeVersion(classStream: ClassInputStream, classModel: BaseClass) = {
     classModel.minor_version = classStream.readShort()
     classModel.major_version = classStream.readShort()
   }
 
-  def decodeAccessFlags(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeAccessFlags(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 
-  def decodeClassMeta(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeClassMeta(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 
-  def decodeConstantPool(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeConstantPool(classStream: ClassInputStream, classModel: BaseClass) = {
     val constantsCount = classStream.readShort()
     val constantDecoder = new ConstantDecoder()
 
@@ -62,19 +62,19 @@ class ClassDecoder {
     }
   }
 
-  def decodeInterfaces(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeInterfaces(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 
-  def decodeFields(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeFields(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 
-  def decodeMethods(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeMethods(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 
-  def decodeAttributes(classStream: ClassInputStream, classModel: ClassModel) = {
+  def decodeAttributes(classStream: ClassInputStream, classModel: BaseClass) = {
 
   }
 }

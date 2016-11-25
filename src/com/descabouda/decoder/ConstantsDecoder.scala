@@ -127,6 +127,7 @@ class ConstantsDecoder {
     constant.bytes = new Array[Byte](constant.length)
 
     classStream.read(constant.bytes)
+    constant.string = new String(constant.bytes)
     constant
   }
 

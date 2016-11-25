@@ -1,6 +1,7 @@
 package com.descabouda.generator
 
-import com.descabouda.model.{BaseClass, OutputClass}
+import com.descabouda.model.constants.{ClassConstant, Utf8Constant}
+import com.descabouda.model._
 
 
 class ClassGenerator {
@@ -19,6 +20,7 @@ class ClassGenerator {
     val outputClass = new OutputClass()
 
     generateClass(baseClass, outputClass)
+    generateInterfaces(baseClass, outputClass)
     generateFields(baseClass, outputClass)
     generateMethods(baseClass, outputClass)
 
@@ -26,40 +28,47 @@ class ClassGenerator {
   }
 
   def generateClass(baseClass: BaseClass, outputClass: OutputClass): Unit = {
-    if ((baseClass.accessFlags & ACC_PUBLIC) == ACC_PUBLIC) {
+    outputClass.publicFlag = (baseClass.accessFlags & ACC_PUBLIC) == ACC_PUBLIC
+    outputClass.finalFlag = (baseClass.accessFlags & ACC_FINAL) == ACC_FINAL
+    outputClass.superFlag = (baseClass.accessFlags & ACC_SUPER) == ACC_SUPER
+    outputClass.interfaceFlag = (baseClass.accessFlags & ACC_INTERFACE) == ACC_INTERFACE
+    outputClass.abstractFlag = (baseClass.accessFlags & ACC_ABSTRACT) == ACC_ABSTRACT
+    outputClass.syntheticFlag = (baseClass.accessFlags & ACC_SYNTHETIC) == ACC_SYNTHETIC
+    outputClass.annotationFlag = (baseClass.accessFlags & ACC_ANNOTATION) == ACC_ANNOTATION
+    outputClass.enumFlag = (baseClass.accessFlags & ACC_ENUM) == ACC_ENUM
 
-    }
+    if (baseClass.thisClass > 0)
+      outputClass.name = baseClass.getClassName(baseClass.thisClass - 1)
 
-    if ((baseClass.accessFlags & ACC_FINAL) == ACC_FINAL) {
+    if (baseClass.superClass > 0)
+      outputClass.superName = baseClass.getClassName(baseClass.superClass - 1)
+  }
 
-    }
-
-    if ((baseClass.accessFlags & ACC_SUPER) == ACC_SUPER) {
-
-    }
-
-    if ((baseClass.accessFlags & ACC_INTERFACE) == ACC_INTERFACE) {
-
-    }
-
-    if ((baseClass.accessFlags & ACC_SYNTHETIC) == ACC_SYNTHETIC) {
-
-    }
-
-    if ((baseClass.accessFlags & ACC_ANNOTATION) == ACC_ANNOTATION) {
-
-    }
-
-    if ((baseClass.accessFlags & ACC_ENUM) == ACC_ENUM) {
-
+  def generateInterfaces(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val interfacesIt = baseClass.interfaces.iterator
+    while(interfacesIt.hasNext) {
+      outputClass.interfaces.add(baseClass.getClassName(
+        interfacesIt.asInstanceOf[BaseInterface].poolIndex - 1))
     }
   }
 
   def generateFields(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val fieldsIt = baseClass.fields.iterator
+    while(fieldsIt.hasNext) {
+      val field = fieldsIt.asInstanceOf[BaseField]
+      val fieldGenerator = new FieldGenerator()
 
+      outputClass.fields.add(fieldGenerator.generate(baseClass, field))
+    }
   }
 
   def generateMethods(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+    val methodsIt = baseClass.fields.iterator
+    while(methodsIt.hasNext) {
+      val method = methodsIt.asInstanceOf[BaseMethod]
+      val methodGenerator = new MethodGenerator()
 
+      outputClass.methods.add(methodGenerator.generate(baseClass, method))
+    }
   }
 }

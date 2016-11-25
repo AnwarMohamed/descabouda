@@ -3,6 +3,8 @@
     <words>
       <w>abouda</w>
       <w>descabouda</w>
+      <w>fieldref</w>
+      <w>methodref</w>
     </words>
   </dictionary>
 </component>

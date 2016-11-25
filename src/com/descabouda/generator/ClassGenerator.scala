@@ -53,22 +53,14 @@ class ClassGenerator {
   }
 
   def generateFields(baseClass: BaseClass, outputClass: OutputClass): Unit = {
-    val fieldsIt = baseClass.fields.iterator
-    while(fieldsIt.hasNext) {
-      val field = fieldsIt.asInstanceOf[BaseField]
-      val fieldGenerator = new FieldGenerator()
-
-      outputClass.fields.add(fieldGenerator.generate(baseClass, field))
-    }
+    baseClass.fields.forEach((field) => {
+      outputClass.fields.add(new FieldGenerator().generate(baseClass, field))
+    })
   }
 
   def generateMethods(baseClass: BaseClass, outputClass: OutputClass): Unit = {
-    val methodsIt = baseClass.fields.iterator
-    while(methodsIt.hasNext) {
-      val method = methodsIt.asInstanceOf[BaseMethod]
-      val methodGenerator = new MethodGenerator()
-
-      outputClass.methods.add(methodGenerator.generate(baseClass, method))
-    }
+    baseClass.methods.forEach((method) => {
+      outputClass.methods.add(new MethodGenerator().generate(baseClass, method))
+    })
   }
 }

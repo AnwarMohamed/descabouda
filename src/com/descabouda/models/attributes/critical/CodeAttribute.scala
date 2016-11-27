@@ -2,7 +2,7 @@ package com.descabouda.models.attributes.critical
 
 import java.util
 
-import com.descabouda.decoder.{AttributesDecoder, CodeDecoder}
+import com.descabouda.decoder.{AttributesDecoder, CodesDecoder}
 import com.descabouda.generator.AttributeGenerator
 import com.descabouda.models.{BaseAttribute, BaseClass, BaseCode, OutputAttribute}
 
@@ -13,7 +13,7 @@ class CodeAttribute extends OutputAttribute {
   var maxLocals: Int = 0
 
   var codeLength: Int = 0
-  var code: BaseCode = null
+  var code: util.ArrayList[BaseCode] = null
 
   var exceptionTableLength: Int = 0
   var exceptionTable = new util.ArrayList[CodeExceptionTable]()
@@ -28,8 +28,8 @@ class CodeAttribute extends OutputAttribute {
     this.maxLocals = infoStream.readUnsignedShort()
 
     this.codeLength = infoStream.readInt()
-//    this.code = new CodeDecoder().decode(infoStream, this.codeLength)
-    infoStream.skipBytes(this.codeLength)
+    this.code = new CodesDecoder().decode(infoStream, this.codeLength)
+//    infoStream.skipBytes(this.codeLength)
 
     this.exceptionTableLength = infoStream.readUnsignedShort()
 

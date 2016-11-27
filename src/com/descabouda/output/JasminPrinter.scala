@@ -5,7 +5,7 @@ import com.descabouda.models.attributes.SourceFileAttribute
 import com.descabouda.models.attributes.critical.RuntimeVisibleAnnotationsAttribute
 import com.descabouda.models.constants._
 
-class SmaliPrinter(input: OutputClass) {
+class JasminPrinter(input: OutputClass) {
   val inputClass: OutputClass = input
 
   def printClassHeader(): Unit = {

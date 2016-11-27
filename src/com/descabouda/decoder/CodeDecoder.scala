@@ -3,8 +3,7 @@ package com.descabouda.decoder
 import java.io.DataInputStream
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.BaseField
-import com.descabouda.model.constants.BaseCode
+import com.descabouda.models.{BaseCode, BaseField}
 
 class CodeDecoder {
   final val OPCODE_AALOAD = 0x32

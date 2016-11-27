@@ -1,6 +1,6 @@
 package com.descabouda.generator
 
-import com.descabouda.model._
+import com.descabouda.models._
 
 class MethodGenerator {
   final val ACC_PUBLIC: Short = 0x0001	      // Declared public; may be accessed from outside its package.

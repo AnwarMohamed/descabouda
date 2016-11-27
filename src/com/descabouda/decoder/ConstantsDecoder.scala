@@ -1,8 +1,8 @@
 package com.descabouda.decoder
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.{BaseClass, BaseConstant}
-import com.descabouda.model.constants._
+import com.descabouda.models.{BaseClass, BaseConstant}
+import com.descabouda.models.constants._
 
 class ConstantsDecoder {
 

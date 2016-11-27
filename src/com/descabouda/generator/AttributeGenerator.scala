@@ -1,8 +1,8 @@
 package com.descabouda.generator
 
-import com.descabouda.model._
-import com.descabouda.model.attributes._
-import com.descabouda.model.attributes.critical._
+import com.descabouda.models._
+import com.descabouda.models.attributes._
+import com.descabouda.models.attributes.critical._
 
 class AttributeGenerator {
   def generate(baseClass: BaseClass, attribute: BaseAttribute): OutputAttribute = {
@@ -44,7 +44,7 @@ class AttributeGenerator {
       case "Deprecated"               => new DeprecatedAttribute().fromStream(baseClass, attribute)
 
       case _ =>
-        println("Unimplemented attribute: " + name)
+//        println("Unimplemented attribute: " + name)
         new OutputAttribute()
     }
   }

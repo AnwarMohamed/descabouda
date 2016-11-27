@@ -3,7 +3,7 @@ package com.descabouda.decoder
 import java.io.DataInputStream
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.{BaseAttribute, BaseInterface}
+import com.descabouda.models.{BaseAttribute, BaseInterface}
 
 class AttributesDecoder {
   def decode(classStream: DataInputStream): BaseAttribute = {

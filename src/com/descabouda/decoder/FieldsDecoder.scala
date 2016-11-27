@@ -1,7 +1,7 @@
 package com.descabouda.decoder
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.{BaseField, BaseInterface}
+import com.descabouda.models.{BaseField, BaseInterface}
 
 class FieldsDecoder {
   def decode(classStream: ClassInputStream): BaseField = {

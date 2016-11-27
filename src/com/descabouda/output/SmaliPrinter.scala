@@ -1,8 +1,9 @@
 package com.descabouda.output
 
-import com.descabouda.model.{OutputClass, OutputMethod}
-import com.descabouda.model.attributes.SourceFileAttribute
-import com.descabouda.model.constants._
+import com.descabouda.models.{OutputClass, OutputMethod}
+import com.descabouda.models.attributes.SourceFileAttribute
+import com.descabouda.models.attributes.critical.RuntimeVisibleAnnotationsAttribute
+import com.descabouda.models.constants._
 
 class SmaliPrinter(input: OutputClass) {
   val inputClass: OutputClass = input
@@ -19,11 +20,24 @@ class SmaliPrinter(input: OutputClass) {
     println(inputClass.name.replaceAll("/", "."))
   }
 
-  def printSourceFile(): Unit = {
+  def printClassMeta(): Unit = {
     if (inputClass.attributes.contains("SourceFile")) {
-      val sourceFile = inputClass.attributes.get("SourceFile").get.asInstanceOf[SourceFileAttribute]
-      println("  SourceFile: \"" + sourceFile.string + "\"")
+      val attribute = inputClass.attributes.get("SourceFile")
+        .get.asInstanceOf[SourceFileAttribute]
+
+      println("  SourceFile: \"" + attribute.string + "\"")
     }
+
+    if (inputClass.attributes.contains("RuntimeVisibleAnnotations")) {
+      val attribute = inputClass.attributes.get("RuntimeVisibleAnnotations")
+        .get.asInstanceOf[RuntimeVisibleAnnotationsAttribute]
+
+      println("  RuntimeVisibleAnnotations:")
+    }
+
+    println("  minor version: " + inputClass.raw.minorVersion)
+    println("  major version: " + inputClass.raw.majorVersion)
+    println("  flags: ")
   }
 
   def printConstantPool(): Unit = {
@@ -113,12 +127,12 @@ class SmaliPrinter(input: OutputClass) {
 
   def printClass(): Unit = {
     printClassHeader()
+    printClassMeta()
 
-    printSourceFile()
-    printConstantPool()
+//    printConstantPool()
 
-    println("{")
-    printMethods()
-    println("}")
+//    println("{")
+//    printMethods()
+//    println("}")
   }
 }

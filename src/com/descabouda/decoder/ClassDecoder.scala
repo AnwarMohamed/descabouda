@@ -1,7 +1,7 @@
 package com.descabouda.decoder
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.model.{BaseClass, BaseConstant}
+import com.descabouda.models.{BaseClass, BaseConstant}
 
 class ClassDecoder {
   def decode(classStream: ClassInputStream): BaseClass = {

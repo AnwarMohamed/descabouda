@@ -1,7 +1,7 @@
 package com.descabouda.generator
 
-import com.descabouda.model.constants.{ClassConstant, Utf8Constant}
-import com.descabouda.model._
+import com.descabouda.models.constants.{ClassConstant, Utf8Constant}
+import com.descabouda.models._
 
 
 class ClassGenerator {

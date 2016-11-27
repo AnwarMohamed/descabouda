@@ -1,7 +1,6 @@
 package com.descabouda.utils
 
 import java.io.{ByteArrayInputStream, DataInputStream}
-import java.lang.Character
 import java.util
 
 object DescriptorUtils {

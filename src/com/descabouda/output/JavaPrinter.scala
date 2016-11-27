@@ -26,8 +26,7 @@ class JavaPrinter(input: OutputClass) {
     println(" {")
 
     if (method.attributes.contains("Code")) {
-      val codeAttribute = method.attributes("Code")
-        .asInstanceOf[CodeAttribute]
+      val codeAttribute = method.attributes("Code").asInstanceOf[CodeAttribute]
 
       codeAttribute.code.forEach((code) => {
         print(" " * 4)

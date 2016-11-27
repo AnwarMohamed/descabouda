@@ -225,614 +225,716 @@ class CodeDecoder {
         code.opCodeString = "aastore"
 
       case OPCODE_ACONST_NULL =>
-        code.opCodeString = ""
+        code.opCodeString = "aconst_null"
 
       case OPCODE_ALOAD =>
         code.opCodeString = "aload"
         code.operands.add(classStream.readByte())
 
       case OPCODE_ALOAD_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "aload_0"
 
       case OPCODE_ALOAD_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "aload_1"
 
       case OPCODE_ALOAD_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "aload_2"
 
       case OPCODE_ALOAD_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "aload_3"
 
       case OPCODE_ANEWARRAY =>
-        code.opCodeString = ""
+        code.opCodeString = "anewarray"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_ARETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "areturn"
 
       case OPCODE_ARRAYLENGTH =>
-        code.opCodeString = ""
+        code.opCodeString = "arraylength"
 
       case OPCODE_ASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "astore"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_ASTORE_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "astore_0"
 
       case OPCODE_ASTORE_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "astore_1"
 
       case OPCODE_ASTORE_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "astore_2"
 
       case OPCODE_ASTORE_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "astore_3"
 
       case OPCODE_ATHROW =>
-        code.opCodeString = ""
+        code.opCodeString = "athrow"
 
       case OPCODE_BALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "baload"
 
       case OPCODE_BASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "bastore"
 
       case OPCODE_BIPUSH =>
-        code.opCodeString = ""
+        code.opCodeString = "bipush"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_BREAKPOINT =>
-        code.opCodeString = ""
+        code.opCodeString = "breakpoint"
 
       case OPCODE_CALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "caload"
 
       case OPCODE_CASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "castore"
 
       case OPCODE_CHECKCAST =>
-        code.opCodeString = ""
+        code.opCodeString = "checkcast"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_D2F =>
-        code.opCodeString = ""
+        code.opCodeString = "d2f"
 
       case OPCODE_D2I =>
-        code.opCodeString = ""
+        code.opCodeString = "d2i"
 
       case OPCODE_D2L =>
-        code.opCodeString = ""
+        code.opCodeString = "d2l"
 
       case OPCODE_DADD =>
-        code.opCodeString = ""
+        code.opCodeString = "dadd"
 
       case OPCODE_DALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "daload"
 
       case OPCODE_DASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "dastore"
 
       case OPCODE_DCMPG =>
-        code.opCodeString = ""
+        code.opCodeString = "dcmpg"
 
       case OPCODE_DCMPL =>
-        code.opCodeString = ""
+        code.opCodeString = "dcmpl"
 
       case OPCODE_DCONST_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "dconst_0"
 
       case OPCODE_DCONST_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "dconst_1"
 
       case OPCODE_DDIV =>
-        code.opCodeString = ""
+        code.opCodeString = "ddiv"
 
       case OPCODE_DLOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "dload"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_DLOAD_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "dload_0"
 
       case OPCODE_DLOAD_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "dload_1"
 
       case OPCODE_DLOAD_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "dload_2"
 
       case OPCODE_DLOAD_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "dload_3"
 
       case OPCODE_DMUL =>
-        code.opCodeString = ""
+        code.opCodeString = "dmul"
 
       case OPCODE_DNEG =>
-        code.opCodeString = ""
+        code.opCodeString = "dneg"
 
       case OPCODE_DREM =>
-        code.opCodeString = ""
+        code.opCodeString = "drem"
 
       case OPCODE_DRETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "dreturn"
 
       case OPCODE_DSTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "dstore"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_DSTORE_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "dstore_0"
 
       case OPCODE_DSTORE_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "dstore_1"
 
       case OPCODE_DSTORE_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "dstore_2"
 
       case OPCODE_DSTORE_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "dstore_3"
 
       case OPCODE_DSUB =>
-        code.opCodeString = ""
+        code.opCodeString = "dsub"
 
       case OPCODE_DUP =>
-        code.opCodeString = ""
+        code.opCodeString = "dup"
 
       case OPCODE_DUP_X1 =>
-        code.opCodeString = ""
+        code.opCodeString = "dup_x1"
 
       case OPCODE_DUP_X2 =>
-        code.opCodeString = ""
+        code.opCodeString = "dup_x2"
 
       case OPCODE_DUP2 =>
-        code.opCodeString = ""
+        code.opCodeString = "dup2"
 
       case OPCODE_DUP2_X1 =>
-        code.opCodeString = ""
+        code.opCodeString = "dup2_x1"
 
       case OPCODE_DUP2_X2 =>
-        code.opCodeString = ""
+        code.opCodeString = "dup2_x2"
 
       case OPCODE_F2D =>
-        code.opCodeString = ""
+        code.opCodeString = "f2d"
 
       case OPCODE_F2I =>
-        code.opCodeString = ""
+        code.opCodeString = "f2i"
 
       case OPCODE_F2L =>
-        code.opCodeString = ""
+        code.opCodeString = "f2l"
 
       case OPCODE_FADD =>
-        code.opCodeString = ""
+        code.opCodeString = "fadd"
 
       case OPCODE_FALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "faload"
 
       case OPCODE_FASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "fastore"
 
       case OPCODE_FCMPG =>
-        code.opCodeString = ""
+        code.opCodeString = "fcmpg"
 
       case OPCODE_FCMPL =>
-        code.opCodeString = ""
+        code.opCodeString = "fcmpl"
 
       case OPCODE_FCONST_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "fconst_0"
 
       case OPCODE_FCONST_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "fconst_1"
 
       case OPCODE_FCONST_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "fconst_2"
 
       case OPCODE_FDIV =>
-        code.opCodeString = ""
+        code.opCodeString = "fdiv"
 
       case OPCODE_FLOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "fload"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_FLOAD_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "fload_0"
 
       case OPCODE_FLOAD_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "fload_1"
 
       case OPCODE_FLOAD_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "fload_2"
 
       case OPCODE_FLOAD_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "fload_3"
 
       case OPCODE_FMUL =>
-        code.opCodeString = ""
+        code.opCodeString = "fmul"
 
       case OPCODE_FNEG =>
-        code.opCodeString = ""
+        code.opCodeString = "fneg"
 
       case OPCODE_FREM =>
-        code.opCodeString = ""
+        code.opCodeString = "frem"
 
       case OPCODE_FRETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "freturn"
 
       case OPCODE_FSTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "fstore"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_FSTORE_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "fstore_0"
 
       case OPCODE_FSTORE_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "fstore_1"
 
       case OPCODE_FSTORE_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "fstore_2"
 
       case OPCODE_FSTORE_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "fstore_3"
 
       case OPCODE_FSUB =>
-        code.opCodeString = ""
+        code.opCodeString = "fsub"
 
       case OPCODE_GETFIELD =>
-        code.opCodeString = ""
+        code.opCodeString = "getfield"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+
 
       case OPCODE_GETSTATIC =>
-        code.opCodeString = ""
+        code.opCodeString = "getstatic"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+
 
       case OPCODE_GOTO =>
-        code.opCodeString = ""
+        code.opCodeString = "goto"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+
 
       case OPCODE_GOTO_W =>
-        code.opCodeString = ""
+        code.opCodeString = "goto_w"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+
 
       case OPCODE_I2B =>
-        code.opCodeString = ""
+        code.opCodeString = "i2b"
 
       case OPCODE_I2C =>
-        code.opCodeString = ""
+        code.opCodeString = "i2c"
 
       case OPCODE_I2D =>
-        code.opCodeString = ""
+        code.opCodeString = "i2d"
 
       case OPCODE_I2F =>
-        code.opCodeString = ""
+        code.opCodeString = "i2f"
 
       case OPCODE_I2L =>
-        code.opCodeString = ""
+        code.opCodeString = "i2l"
 
       case OPCODE_I2S =>
-        code.opCodeString = ""
+        code.opCodeString = "i2s"
 
       case OPCODE_IADD =>
-        code.opCodeString = ""
+        code.opCodeString = "iadd"
 
       case OPCODE_IALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "iaload"
 
       case OPCODE_IAND =>
-        code.opCodeString = ""
+        code.opCodeString = "iand"
 
       case OPCODE_IASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "iastore"
 
       case OPCODE_ICONST_M1 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_m1"
 
       case OPCODE_ICONST_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_0"
 
       case OPCODE_ICONST_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_1"
 
       case OPCODE_ICONST_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_2"
 
       case OPCODE_ICONST_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_3"
 
       case OPCODE_ICONST_4 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_4"
 
       case OPCODE_ICONST_5 =>
-        code.opCodeString = ""
+        code.opCodeString = "iconst_5"
 
       case OPCODE_IDIV =>
-        code.opCodeString = ""
+        code.opCodeString = "idiv"
 
       case OPCODE_IF_ACMPEQ =>
-        code.opCodeString = ""
+        code.opCodeString = "if_acmpeq"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ACMPNE =>
-        code.opCodeString = ""
+        code.opCodeString = "if_acmpne"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPEQ =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmpeq"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPGE =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmpge"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPGT =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmpgt"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPLE =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmple"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPLT =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmplt"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IF_ICMPNE =>
-        code.opCodeString = ""
+        code.opCodeString = "if_icmpne"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFEQ =>
-        code.opCodeString = ""
+        code.opCodeString = "ifeq"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFGE =>
-        code.opCodeString = ""
+        code.opCodeString = "ifge"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFGT =>
-        code.opCodeString = ""
+        code.opCodeString = "ifgt"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFLE =>
-        code.opCodeString = ""
+        code.opCodeString = "ifle"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFLT =>
-        code.opCodeString = ""
+        code.opCodeString = "iflt"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFNE =>
-        code.opCodeString = ""
+        code.opCodeString = "ifne"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFNONNULL =>
-        code.opCodeString = ""
+        code.opCodeString = "ifnonnull"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IFNULL =>
-        code.opCodeString = ""
+        code.opCodeString = "ifnull"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IINC =>
-        code.opCodeString = ""
+        code.opCodeString = "iinc"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_ILOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "iload"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_ILOAD_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "iload_0"
 
       case OPCODE_ILOAD_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "iload_0"
 
       case OPCODE_ILOAD_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "iload_0"
 
       case OPCODE_ILOAD_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "iload_0"
 
       case OPCODE_IMPDEP1 =>
-        code.opCodeString = ""
+        code.opCodeString = "impdep1"
 
       case OPCODE_IMPDEP2 =>
-        code.opCodeString = ""
+        code.opCodeString = "impdep2"
 
       case OPCODE_IMUL =>
-        code.opCodeString = ""
+        code.opCodeString = "imul"
 
       case OPCODE_INEG =>
-        code.opCodeString = ""
+        code.opCodeString = "ineg"
 
       case OPCODE_INSTANCEOF =>
-        code.opCodeString = ""
+        code.opCodeString = "instanceof"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_INVOKEDYNAMIC =>
-        code.opCodeString = ""
+        code.opCodeString = "invokedynamic"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_INVOKEINTERFACE =>
-        code.opCodeString = ""
+        code.opCodeString = "invokeinterface"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_INVOKESPECIAL =>
-        code.opCodeString = ""
+        code.opCodeString = "invokespecial"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_INVOKESTATIC =>
-        code.opCodeString = ""
+        code.opCodeString = "invokestatic"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_INVOKEVIRTUAL =>
-        code.opCodeString = ""
+        code.opCodeString = "invokevirtual"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_IOR =>
-        code.opCodeString = ""
+        code.opCodeString = "ior"
 
       case OPCODE_IREM =>
-        code.opCodeString = ""
+        code.opCodeString = "irem"
 
       case OPCODE_IRETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "ireturn"
 
       case OPCODE_ISHL =>
-        code.opCodeString = ""
+        code.opCodeString = "ishl"
 
       case OPCODE_ISHR =>
-        code.opCodeString = ""
+        code.opCodeString = "ishr"
 
       case OPCODE_ISTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "istore"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_ISTORE_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "istore_0"
 
       case OPCODE_ISTORE_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "istore_1"
 
       case OPCODE_ISTORE_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "istore_2"
 
       case OPCODE_ISTORE_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "istore_3"
 
       case OPCODE_ISUB =>
-        code.opCodeString = ""
+        code.opCodeString = "isub"
 
       case OPCODE_IUSHR =>
-        code.opCodeString = ""
+        code.opCodeString = "iushr"
 
       case OPCODE_IXOR =>
-        code.opCodeString = ""
+        code.opCodeString = "ixor"
 
       case OPCODE_JSR =>
-        code.opCodeString = ""
+        code.opCodeString = "jsr"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_JSR_W =>
-        code.opCodeString = ""
+        code.opCodeString = "jsr_w"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_L2D =>
-        code.opCodeString = ""
+        code.opCodeString = "l2d"
 
       case OPCODE_L2F =>
-        code.opCodeString = ""
+        code.opCodeString = "l2f"
 
       case OPCODE_L2I =>
-        code.opCodeString = ""
+        code.opCodeString = "l2i"
 
       case OPCODE_LADD =>
-        code.opCodeString = ""
+        code.opCodeString = "ladd"
 
       case OPCODE_LALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "laload"
 
       case OPCODE_LAND =>
-        code.opCodeString = ""
+        code.opCodeString = "land"
 
       case OPCODE_LASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "lastore"
 
       case OPCODE_LCMP =>
-        code.opCodeString = ""
+        code.opCodeString = "lcmp"
 
       case OPCODE_LCONST_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "lconst_0"
 
       case OPCODE_LCONST_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "lconst_1"
 
       case OPCODE_LDC =>
-        code.opCodeString = ""
+        code.opCodeString = "ldc"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_LDC_W =>
-        code.opCodeString = ""
+        code.opCodeString = "ldc_w"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_LDC2_W =>
-        code.opCodeString = ""
+        code.opCodeString = "ldc2_2"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_LDIV =>
-        code.opCodeString = ""
+        code.opCodeString = "ldiv"
 
       case OPCODE_LLOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "lload"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_LLOAD_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "lload_0"
 
       case OPCODE_LLOAD_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "lload_1"
 
       case OPCODE_LLOAD_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "lload_2"
 
       case OPCODE_LLOAD_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "lload_3"
 
       case OPCODE_LMUL =>
-        code.opCodeString = ""
+        code.opCodeString = "lmul"
 
       case OPCODE_LNEG =>
-        code.opCodeString = ""
+        code.opCodeString = "lneg"
 
       case OPCODE_LOOKUPSWITCH =>
-        code.opCodeString = ""
+        code.opCodeString = "lookupswitch"
 
       case OPCODE_LOR =>
-        code.opCodeString = ""
+        code.opCodeString = "lor"
 
       case OPCODE_LREM =>
-        code.opCodeString = ""
+        code.opCodeString = "lrem"
 
       case OPCODE_LRETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "lreturn"
 
       case OPCODE_LSHL =>
-        code.opCodeString = ""
+        code.opCodeString = "lshl"
 
       case OPCODE_LSHR =>
-        code.opCodeString = ""
+        code.opCodeString = "lshr"
 
       case OPCODE_LSTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "lstore"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_LSTORE_0 =>
-        code.opCodeString = ""
+        code.opCodeString = "lstore_0"
 
       case OPCODE_LSTORE_1 =>
-        code.opCodeString = ""
+        code.opCodeString = "lstore_1"
 
       case OPCODE_LSTORE_2 =>
-        code.opCodeString = ""
+        code.opCodeString = "lstore_2"
 
       case OPCODE_LSTORE_3 =>
-        code.opCodeString = ""
+        code.opCodeString = "lstore_3"
 
       case OPCODE_LSUB =>
-        code.opCodeString = ""
+        code.opCodeString = "lsub"
 
       case OPCODE_LUSHR =>
-        code.opCodeString = ""
+        code.opCodeString = "lushr"
 
       case OPCODE_LXOR =>
-        code.opCodeString = ""
+        code.opCodeString = "lxor"
 
       case OPCODE_MONITORENTER =>
-        code.opCodeString = ""
+        code.opCodeString = "monitorenter"
 
       case OPCODE_MONITOREXIT =>
-        code.opCodeString = ""
+        code.opCodeString = "monitorexit"
 
       case OPCODE_MULTIANEWARRAY =>
-        code.opCodeString = ""
+        code.opCodeString = "multianewarray"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_NEW =>
-        code.opCodeString = ""
+        code.opCodeString = "new"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_NEWARRAY =>
-        code.opCodeString = ""
+        code.opCodeString = "newarray"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_NOP =>
-        code.opCodeString = ""
+        code.opCodeString = "nop"
 
       case OPCODE_POP =>
-        code.opCodeString = ""
+        code.opCodeString = "pop"
 
       case OPCODE_POP2 =>
-        code.opCodeString = ""
+        code.opCodeString = "pop2"
 
       case OPCODE_PUTFIELD =>
-        code.opCodeString = ""
+        code.opCodeString = "putfield"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_PUTSTATIC =>
-        code.opCodeString = ""
+        code.opCodeString = "putstatic"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_RET =>
-        code.opCodeString = ""
+        code.opCodeString = "ret"
+        code.operands.add(classStream.readByte())
 
       case OPCODE_RETURN =>
-        code.opCodeString = ""
+        code.opCodeString = "return"
 
       case OPCODE_SALOAD =>
-        code.opCodeString = ""
+        code.opCodeString = "saload"
 
       case OPCODE_SASTORE =>
-        code.opCodeString = ""
+        code.opCodeString = "sastore"
 
       case OPCODE_SIPUSH =>
-        code.opCodeString = ""
+        code.opCodeString = "sipush"
+        code.operands.add(classStream.readByte())
+        code.operands.add(classStream.readByte())
 
       case OPCODE_SWAP =>
-        code.opCodeString = ""
+        code.opCodeString = "swap"
 
       case OPCODE_TABLESWITCH =>
-        code.opCodeString = ""
+        code.opCodeString = "tableswitch"
 
       case OPCODE_WIDE =>
-        code.opCodeString = ""
+        code.opCodeString = "wide"
     }
 
     code

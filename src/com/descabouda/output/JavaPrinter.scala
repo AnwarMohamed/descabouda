@@ -1,5 +1,6 @@
 package com.descabouda.output
 
+import com.descabouda.models.attributes.critical.CodeAttribute
 import com.descabouda.models.{OutputClass, OutputField, OutputMethod}
 
 class JavaPrinter(input: OutputClass) {
@@ -23,6 +24,18 @@ class JavaPrinter(input: OutputClass) {
   def printMethod(method: OutputMethod): Unit = {
     printMethodHeader(method)
     println(" {")
+
+    if (method.attributes.contains("Code")) {
+      val codeAttribute = method.attributes("Code")
+        .asInstanceOf[CodeAttribute]
+
+      codeAttribute.code.forEach((code) => {
+        print(" " * 4)
+        print(code.mnemonicString)
+        print(" ")
+        println(code.operandsString)
+      })
+    }
 
     println(" " * 2 + "}")
     println()

@@ -236,6 +236,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
 
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
+
         case OPCODE_ALOAD_0 =>
           code.mnemonicString = "aload_0"
 
@@ -254,6 +257,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_ARETURN =>
           code.mnemonicString = "areturn"
 
@@ -264,6 +270,9 @@ class CodesDecoder {
           code.mnemonicString = "astore"
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
+
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
 
         case OPCODE_ASTORE_0 =>
           code.mnemonicString = "astore_0"
@@ -291,6 +300,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
 
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0))
+
         case OPCODE_BREAKPOINT =>
           code.mnemonicString = "breakpoint"
 
@@ -305,6 +317,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_D2F =>
           code.mnemonicString = "d2f"
@@ -344,6 +359,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
 
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
+
         case OPCODE_DLOAD_0 =>
           code.mnemonicString = "dload_0"
 
@@ -372,6 +390,9 @@ class CodesDecoder {
           code.mnemonicString = "dstore"
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
+
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
 
         case OPCODE_DSTORE_0 =>
           code.mnemonicString = "dstore_0"
@@ -447,6 +468,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
 
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
+
         case OPCODE_FLOAD_0 =>
           code.mnemonicString = "fload_0"
 
@@ -476,6 +500,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
 
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
+
         case OPCODE_FSTORE_0 =>
           code.mnemonicString = "fstore_0"
 
@@ -497,6 +524,8 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_GETSTATIC =>
           code.mnemonicString = "getstatic"
@@ -504,6 +533,8 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_GOTO =>
           code.mnemonicString = "goto"
@@ -511,6 +542,8 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_GOTO_W =>
           code.mnemonicString = "goto_w"
@@ -520,6 +553,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 24) + (code.operands.get(1) << 16) +
+              (code.operands.get(2) << 8) + code.operands.get(3) - 1)
 
         case OPCODE_I2B =>
           code.mnemonicString = "i2b"
@@ -581,11 +617,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IF_ACMPNE =>
           code.mnemonicString = "if_acmpne"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IF_ICMPEQ =>
           code.mnemonicString = "if_icmpeq"
@@ -593,11 +635,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IF_ICMPGE =>
           code.mnemonicString = "if_icmpge"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IF_ICMPGT =>
           code.mnemonicString = "if_icmpgt"
@@ -605,11 +653,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IF_ICMPLE =>
           code.mnemonicString = "if_icmple"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IF_ICMPLT =>
           code.mnemonicString = "if_icmplt"
@@ -617,11 +671,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IF_ICMPNE =>
           code.mnemonicString = "if_icmpne"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IFEQ =>
           code.mnemonicString = "ifeq"
@@ -629,11 +689,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IFGE =>
           code.mnemonicString = "ifge"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IFGT =>
           code.mnemonicString = "ifgt"
@@ -641,11 +707,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IFLE =>
           code.mnemonicString = "ifle"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IFLT =>
           code.mnemonicString = "iflt"
@@ -653,11 +725,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IFNE =>
           code.mnemonicString = "ifne"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IFNONNULL =>
           code.mnemonicString = "ifnonnull"
@@ -665,11 +743,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_IFNULL =>
           code.mnemonicString = "ifnull"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IINC =>
           code.mnemonicString = "iinc"
@@ -681,6 +765,9 @@ class CodesDecoder {
           code.mnemonicString = "iload"
           code.operands.add(classStream.readUnsignedByte())
           code.length += 1
+
+          code.operandsString = "#" + String.valueOf(
+            code.operands.get(0) - 1)
 
         case OPCODE_ILOAD_0 =>
           code.mnemonicString = "iload_0"
@@ -712,6 +799,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_INVOKEDYNAMIC =>
           code.mnemonicString = "invokedynamic"
           code.operands.add(classStream.readUnsignedByte())
@@ -719,6 +809,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 4
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_INVOKEINTERFACE =>
           code.mnemonicString = "invokeinterface"
@@ -728,11 +821,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 4
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_INVOKESPECIAL =>
           code.mnemonicString = "invokespecial"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_INVOKESTATIC =>
           code.mnemonicString = "invokestatic"
@@ -740,11 +839,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_INVOKEVIRTUAL =>
           code.mnemonicString = "invokevirtual"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_IOR =>
           code.mnemonicString = "ior"
@@ -937,6 +1042,9 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_NEWARRAY =>
           code.mnemonicString = "newarray"
           code.operands.add(classStream.readUnsignedByte())
@@ -957,11 +1065,17 @@ class CodesDecoder {
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
 
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
+
         case OPCODE_PUTSTATIC =>
           code.mnemonicString = "putstatic"
           code.operands.add(classStream.readUnsignedByte())
           code.operands.add(classStream.readUnsignedByte())
           code.length += 2
+
+          code.operandsString = "#" + String.valueOf(
+            (code.operands.get(0) << 8) + code.operands.get(1) - 1)
 
         case OPCODE_RET =>
           code.mnemonicString = "ret"

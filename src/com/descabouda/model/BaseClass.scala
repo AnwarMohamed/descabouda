@@ -51,7 +51,7 @@ class BaseClass {
     null
   }
 
-  def parseDescriptor(descriptor: String): String = {
-
+  def parseDescriptor(descriptor: String): Array[String] = {
+    null
   }
 }

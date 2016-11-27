@@ -1,5 +1,6 @@
 *.class
 *.log
+*.javap
 
 # sbt specific
 .cache

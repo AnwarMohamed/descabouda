@@ -1,6 +1,6 @@
 package com.descabouda.output
 
-import com.descabouda.model.OutputClass
+import com.descabouda.model.{OutputClass, OutputMethod}
 import com.descabouda.model.attributes.SourceFileAttribute
 import com.descabouda.model.constants._
 
@@ -88,8 +88,27 @@ class SmaliPrinter(input: OutputClass) {
     })
   }
 
-  def printMethods(): Unit = {
+  def printMethods(): Unit =
+    inputClass.methods.forEach((method) => printMethod(method))
 
+  def printMethod(method: OutputMethod): Unit = {
+    printMethodHeader(method)
+  }
+
+  def printMethodHeader(method: OutputMethod): Unit = {
+    print(" " * 2)
+
+    if (method.publicFlag)
+      print("public ")
+    else if (method.privateFlag)
+      print("private ")
+    else if (method.protectedFlag)
+      print("protected ")
+
+    if (method.abstractFlag)
+      print("abstract ")
+
+    println(method.name + " " + method.descriptor)
   }
 
   def printClass(): Unit = {

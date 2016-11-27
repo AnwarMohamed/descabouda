@@ -1,529 +1,0 @@
-Classfile /media/DATA/College/plt/codes/descabouda/out/production/descabouda/com/descabouda/model/BaseClass.class
-  Last modified Nov 25, 2016; size 5198 bytes
-  MD5 checksum f3d49fe21e07f95eac284fcfd5542ac5
-  Compiled from "BaseClass.scala"
-public class com.descabouda.model.BaseClass
-  SourceFile: "BaseClass.scala"
-  RuntimeVisibleAnnotations:
-    0: #6(#7:s#8)
-    ScalaInlineInfo: length = 0x68
-     01 00 00 14 00 62 00 66 00 00 0C 00 1A 00 00 27
-     00 20 00 00 18 00 2E 00 00 0F 00 2E 00 00 14 00
-     2E 00 00 4D 00 4E 00 00 51 00 52 00 00 39 00 3A
-     00 00 58 00 52 00 00 12 00 2E 00 00 0B 00 1A 00
-     00 24 00 20 00 00 16 00 2E 00 00 09 00 1A 00 00
-     1F 00 20 00 00 0E 00 1A 00 00 2D 00 20 00 00 0D
-     00 1A 00 00 2A 00 20 00 
-    ScalaSig: length = 0x3
-     05 00 00 
-  minor version: 0
-  major version: 52
-  flags: ACC_PUBLIC, ACC_SUPER
-Constant pool:
-    #1 = Utf8               com/descabouda/model/BaseClass;
-    #2 = Class              #1;           //  com/descabouda/model/BaseClass
-    #3 = Utf8               java/lang/Object;
-    #4 = Class              #3;           //  java/lang/Object
-    #5 = Utf8               BaseClass.scala;
-    #6 = Utf8               Lscala/reflect/ScalaSignature;;
-    #7 = Utf8               bytes;
-    #8 = Utf8               UbB%BQ1tKcm]:\r!!B7pId'BA)!Wm]2bE>,H-1m\7MA\t9i)1oY1mC&q:L(+4\tEA\n\rqJg.;?)Cb%\taF\r[&twN,feNLwN\1A1\"G511!8ua1Au\t#\5o_J4VM]:j_:|F%Z9y\tCA \tCBV]&$b\rGq\nBA&$AnS:|'OV3sg&|g\tM\r\"1iM[8s-8/[8oA1A%\n#\1k_J4VM]:j_:|F%Z9yQb(\rY\r5'n:WKJn8!q1A]\t1\"Y2dKNh\t\1hg\"9a\n\taD1dG8O7bON|F%Z9yb0\ri\r7-Z:t\r2wm\tY!C/IA[5t27oq\r\":5!.[:DY8ofcRaDE]\n\t1a)Q1QA[5t27o\ty!C/Q1/9fecm]:\t!Cq1/9fecm]:`IHCCs(!AAaAa!BAaC:va8\t\1tgBqACq)Ad_:H/8ugV\t\nEJBkA2A!;jY*\tQ*kCZBA(K%\t%O]1z&H#&!K\rXmQ8ogRg)%\r|gn;b]RCW\tIA,%tG/:gC,7/FY!\rIe*\t)iK!a\t7/Z%oih-Y2fi)A1YN;fe7-Z:!yA1AaAZ5fYX#A1%s%\rG&AM\nXMR5fYDaA!\ta4jK2$7\tQ\r\"jiW\r5pIN,A\t:[Cm\ti'ACCN,W*;i_Daa!QC7fi\"|Gm\tE!!CeQ\r;sS\n,H/Z:M2!(u!\t!R/w\ti!)Y:fR$(/2viDa!aC1uiJL'-;fgBQAm1bZ3u>t7^1oiR {f\rGS:$W\r!\t!!,Go7bgN$B!aA!QAA\t\t9AG%!1BA5E.Y:t>t7^1oi\")QP a1!9MD4ficm]:OC6,GBAWB!a&9!DA!\r\tYD;Q1!a\ta$o\8u}%1\rAX\rZ3g\t9#!\rM#(/8h\r\t{=\r\t=\"29q-;ViDDBAgAa!`AA;
-    #9 = Utf8               minorVersion;
-   #10 = Utf8               I;
-   #11 = Utf8               majorVersion;
-   #12 = Utf8               accessFlags;
-   #13 = Utf8               thisClass;
-   #14 = Utf8               superClass;
-   #15 = Utf8               constants;
-   #16 = Utf8               Ljava/util/ArrayList;;
-   #17 = Utf8               Ljava/util/ArrayList<Lcom/descabouda/model/BaseConstant;>;;
-   #18 = Utf8               interfaces;
-   #19 = Utf8               Ljava/util/ArrayList<Lcom/descabouda/model/BaseInterface;>;;
-   #20 = Utf8               fields;
-   #21 = Utf8               Ljava/util/ArrayList<Lcom/descabouda/model/BaseField;>;;
-   #22 = Utf8               methods;
-   #23 = Utf8               Ljava/util/ArrayList<Lcom/descabouda/model/BaseMethod;>;;
-   #24 = Utf8               attributes;
-   #25 = Utf8               Ljava/util/ArrayList<Lcom/descabouda/model/BaseAttribute;>;;
-   #26 = Utf8               ()I;
-   #27 = NameAndType        #9:#10;       //  minorVersion:I
-   #28 = Fieldref           #2.#27;       //  com/descabouda/model/BaseClass.minorVersion:I
-   #29 = Utf8               this;
-   #30 = Utf8               Lcom/descabouda/model/BaseClass;;
-   #31 = Utf8               minorVersion_$eq;
-   #32 = Utf8               (I)V;
-   #33 = Utf8               x$1;
-   #34 = NameAndType        #11:#10;      //  majorVersion:I
-   #35 = Fieldref           #2.#34;       //  com/descabouda/model/BaseClass.majorVersion:I
-   #36 = Utf8               majorVersion_$eq;
-   #37 = NameAndType        #12:#10;      //  accessFlags:I
-   #38 = Fieldref           #2.#37;       //  com/descabouda/model/BaseClass.accessFlags:I
-   #39 = Utf8               accessFlags_$eq;
-   #40 = NameAndType        #13:#10;      //  thisClass:I
-   #41 = Fieldref           #2.#40;       //  com/descabouda/model/BaseClass.thisClass:I
-   #42 = Utf8               thisClass_$eq;
-   #43 = NameAndType        #14:#10;      //  superClass:I
-   #44 = Fieldref           #2.#43;       //  com/descabouda/model/BaseClass.superClass:I
-   #45 = Utf8               superClass_$eq;
-   #46 = Utf8               ()Ljava/util/ArrayList;;
-   #47 = NameAndType        #15:#16;      //  constants:Ljava/util/ArrayList;
-   #48 = Fieldref           #2.#47;       //  com/descabouda/model/BaseClass.constants:Ljava/util/ArrayList;
-   #49 = NameAndType        #18:#16;      //  interfaces:Ljava/util/ArrayList;
-   #50 = Fieldref           #2.#49;       //  com/descabouda/model/BaseClass.interfaces:Ljava/util/ArrayList;
-   #51 = NameAndType        #20:#16;      //  fields:Ljava/util/ArrayList;
-   #52 = Fieldref           #2.#51;       //  com/descabouda/model/BaseClass.fields:Ljava/util/ArrayList;
-   #53 = NameAndType        #22:#16;      //  methods:Ljava/util/ArrayList;
-   #54 = Fieldref           #2.#53;       //  com/descabouda/model/BaseClass.methods:Ljava/util/ArrayList;
-   #55 = NameAndType        #24:#16;      //  attributes:Ljava/util/ArrayList;
-   #56 = Fieldref           #2.#55;       //  com/descabouda/model/BaseClass.attributes:Ljava/util/ArrayList;
-   #57 = Utf8               getConstant;
-   #58 = Utf8               (I)Lcom/descabouda/model/BaseConstant;;
-   #59 = Utf8               index;
-   #60 = NameAndType        #15:#46;      //  constants:()Ljava/util/ArrayList;
-   #61 = Methodref          #2.#60;       //  com/descabouda/model/BaseClass.constants:()Ljava/util/ArrayList;
-   #62 = Utf8               java/util/ArrayList;
-   #63 = Class              #62;          //  java/util/ArrayList
-   #64 = Utf8               size;
-   #65 = NameAndType        #64:#26;      //  size:()I
-   #66 = Methodref          #63.#65;      //  java/util/ArrayList.size:()I
-   #67 = Utf8               get;
-   #68 = Utf8               (I)Ljava/lang/Object;;
-   #69 = NameAndType        #67:#68;      //  get:(I)Ljava/lang/Object;
-   #70 = Methodref          #63.#69;      //  java/util/ArrayList.get:(I)Ljava/lang/Object;
-   #71 = Utf8               scala/runtime/BoxedUnit;
-   #72 = Class              #71;          //  scala/runtime/BoxedUnit
-   #73 = Utf8               UNIT;
-   #74 = Utf8               Lscala/runtime/BoxedUnit;;
-   #75 = NameAndType        #73:#74;      //  UNIT:Lscala/runtime/BoxedUnit;
-   #76 = Fieldref           #72.#75;      //  scala/runtime/BoxedUnit.UNIT:Lscala/runtime/BoxedUnit;
-   #77 = Utf8               getClass;
-   #78 = Utf8               (I)Lcom/descabouda/model/constants/ClassConstant;;
-   #79 = Utf8               com/descabouda/model/constants/ClassConstant;
-   #80 = Class              #79;          //  com/descabouda/model/constants/ClassConstant
-   #81 = Utf8               getClassName;
-   #82 = Utf8               (I)Ljava/lang/String;;
-   #83 = NameAndType        #77:#78;      //  getClass:(I)Lcom/descabouda/model/constants/ClassConstant;
-   #84 = Methodref          #2.#83;       //  com/descabouda/model/BaseClass.getClass:(I)Lcom/descabouda/model/constants/ClassConstant;
-   #85 = Utf8               nameIndex;
-   #86 = NameAndType        #85:#26;      //  nameIndex:()I
-   #87 = Methodref          #80.#86;      //  com/descabouda/model/constants/ClassConstant.nameIndex:()I
-   #88 = Utf8               getUtf8;
-   #89 = NameAndType        #88:#82;      //  getUtf8:(I)Ljava/lang/String;
-   #90 = Methodref          #2.#89;       //  com/descabouda/model/BaseClass.getUtf8:(I)Ljava/lang/String;
-   #91 = Utf8               java/lang/String;
-   #92 = Class              #91;          //  java/lang/String
-   #93 = Utf8               com/descabouda/model/constants/Utf8Constant;
-   #94 = Class              #93;          //  com/descabouda/model/constants/Utf8Constant
-   #95 = Utf8               ()[B;
-   #96 = NameAndType        #7:#95;       //  bytes:()[B
-   #97 = Methodref          #94.#96;      //  com/descabouda/model/constants/Utf8Constant.bytes:()[B
-   #98 = Utf8               <init>;
-   #99 = Utf8               ([B)V;
-  #100 = NameAndType        #98:#99;      //  "<init>":([B)V
-  #101 = Methodref          #92.#100;     //  java/lang/String."<init>":([B)V
-  #102 = Utf8               ()V;
-  #103 = NameAndType        #98:#102;     //  "<init>":()V
-  #104 = Methodref          #4.#103;      //  java/lang/Object."<init>":()V
-  #105 = Methodref          #63.#103;     //  java/util/ArrayList."<init>":()V
-  #106 = Utf8               Signature;
-  #107 = Utf8               Code;
-  #108 = Utf8               LocalVariableTable;
-  #109 = Utf8               LineNumberTable;
-  #110 = Utf8               MethodParameters;
-  #111 = Utf8               ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseConstant;>;;
-  #112 = Utf8               ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseInterface;>;;
-  #113 = Utf8               ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseField;>;;
-  #114 = Utf8               ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseMethod;>;;
-  #115 = Utf8               ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseAttribute;>;;
-  #116 = Utf8               StackMapTable;
-  #117 = Utf8               SourceFile;
-  #118 = Utf8               RuntimeVisibleAnnotations;
-  #119 = Utf8               ScalaInlineInfo;
-  #120 = Utf8               ScalaSig;
-{
-  public int minorVersion();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #28;                // Field minorVersion:I
-         4: ireturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 8: 0
-
-  public void minorVersion_$eq(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: iload_1       
-         2: putfield      #28;                // Field minorVersion:I
-         5: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       6     0  this   Lcom/descabouda/model/BaseClass;
-               0       6     1   x$1   I
-      LineNumberTable:
-        line 8: 0
-      MethodParameters: length = 0x5
-       01 00 21 00 10 
-
-  public int majorVersion();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #35;                // Field majorVersion:I
-         4: ireturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 9: 0
-
-  public void majorVersion_$eq(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: iload_1       
-         2: putfield      #35;                // Field majorVersion:I
-         5: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       6     0  this   Lcom/descabouda/model/BaseClass;
-               0       6     1   x$1   I
-      LineNumberTable:
-        line 9: 0
-      MethodParameters: length = 0x5
-       01 00 21 00 10 
-
-  public int accessFlags();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #38;                // Field accessFlags:I
-         4: ireturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 10: 0
-
-  public void accessFlags_$eq(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: iload_1       
-         2: putfield      #38;                // Field accessFlags:I
-         5: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       6     0  this   Lcom/descabouda/model/BaseClass;
-               0       6     1   x$1   I
-      LineNumberTable:
-        line 10: 0
-      MethodParameters: length = 0x5
-       01 00 21 00 10 
-
-  public int thisClass();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #41;                // Field thisClass:I
-         4: ireturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 11: 0
-
-  public void thisClass_$eq(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: iload_1       
-         2: putfield      #41;                // Field thisClass:I
-         5: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       6     0  this   Lcom/descabouda/model/BaseClass;
-               0       6     1   x$1   I
-      LineNumberTable:
-        line 11: 0
-      MethodParameters: length = 0x5
-       01 00 21 00 10 
-
-  public int superClass();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #44;                // Field superClass:I
-         4: ireturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 12: 0
-
-  public void superClass_$eq(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: iload_1       
-         2: putfield      #44;                // Field superClass:I
-         5: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       6     0  this   Lcom/descabouda/model/BaseClass;
-               0       6     1   x$1   I
-      LineNumberTable:
-        line 12: 0
-      MethodParameters: length = 0x5
-       01 00 21 00 10 
-
-  public java.util.ArrayList<com.descabouda.model.BaseConstant> constants();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #48;                // Field constants:Ljava/util/ArrayList;
-         4: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 14: 0
-    Signature: #111                         // ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseConstant;>;
-
-  public java.util.ArrayList<com.descabouda.model.BaseInterface> interfaces();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #50;                // Field interfaces:Ljava/util/ArrayList;
-         4: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 15: 0
-    Signature: #112                         // ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseInterface;>;
-
-  public java.util.ArrayList<com.descabouda.model.BaseField> fields();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #52;                // Field fields:Ljava/util/ArrayList;
-         4: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 16: 0
-    Signature: #113                         // ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseField;>;
-
-  public java.util.ArrayList<com.descabouda.model.BaseMethod> methods();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #54;                // Field methods:Ljava/util/ArrayList;
-         4: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 17: 0
-    Signature: #114                         // ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseMethod;>;
-
-  public java.util.ArrayList<com.descabouda.model.BaseAttribute> attributes();
-    flags: ACC_PUBLIC
-    Code:
-      stack=1, locals=1, args_size=1
-         0: aload_0       
-         1: getfield      #56;                // Field attributes:Ljava/util/ArrayList;
-         4: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0       5     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 18: 0
-    Signature: #115                         // ()Ljava/util/ArrayList<Lcom/descabouda/model/BaseAttribute;>;
-
-  public com.descabouda.model.BaseConstant getConstant(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: iload_1       
-         1: iconst_0      
-         2: if_icmple     27
-         5: iload_1       
-         6: aload_0       
-         7: invokevirtual #61;                // Method constants:()Ljava/util/ArrayList;
-        10: invokevirtual #66;                // Method java/util/ArrayList.size:()I
-        13: if_icmpge     27
-        16: aload_0       
-        17: invokevirtual #61;                // Method constants:()Ljava/util/ArrayList;
-        20: iload_1       
-        21: invokevirtual #70;                // Method java/util/ArrayList.get:(I)Ljava/lang/Object;
-        24: goto          30
-        27: getstatic     #76;                // Field scala/runtime/BoxedUnit.UNIT:Lscala/runtime/BoxedUnit;
-        30: pop           
-        31: aconst_null   
-        32: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0      33     0  this   Lcom/descabouda/model/BaseClass;
-               0      33     1 index   I
-      LineNumberTable:
-        line 21: 0
-        line 22: 16
-        line 21: 27
-        line 25: 31
-      StackMapTable: number_of_entries = 2
-           frame_type = 27 /* same */
-           frame_type = 66 /* same_locals_1_stack_item */
-          stack = [ class java/lang/Object ]
-
-      MethodParameters: length = 0x5
-       01 00 3B 00 10 
-
-  public com.descabouda.model.constants.ClassConstant getClass(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=2, locals=2, args_size=2
-         0: aload_0       
-         1: invokevirtual #61;                // Method constants:()Ljava/util/ArrayList;
-         4: iload_1       
-         5: invokevirtual #70;                // Method java/util/ArrayList.get:(I)Ljava/lang/Object;
-         8: checkcast     #80;                // class com/descabouda/model/constants/ClassConstant
-        11: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0      12     0  this   Lcom/descabouda/model/BaseClass;
-               0      12     1 index   I
-      LineNumberTable:
-        line 29: 0
-      MethodParameters: length = 0x5
-       01 00 3B 00 10 
-
-  public java.lang.String getClassName(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=3, locals=2, args_size=2
-         0: aload_0       
-         1: aload_0       
-         2: iload_1       
-         3: invokevirtual #84;                // Method getClass:(I)Lcom/descabouda/model/constants/ClassConstant;
-         6: invokevirtual #87;                // Method com/descabouda/model/constants/ClassConstant.nameIndex:()I
-         9: iconst_1      
-        10: isub          
-        11: invokevirtual #90;                // Method getUtf8:(I)Ljava/lang/String;
-        14: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0      15     0  this   Lcom/descabouda/model/BaseClass;
-               0      15     1 index   I
-      LineNumberTable:
-        line 33: 0
-      MethodParameters: length = 0x5
-       01 00 3B 00 10 
-
-  public java.lang.String getUtf8(int);
-    flags: ACC_PUBLIC
-    Code:
-      stack=4, locals=2, args_size=2
-         0: new           #92;                // class java/lang/String
-         3: dup           
-         4: aload_0       
-         5: invokevirtual #61;                // Method constants:()Ljava/util/ArrayList;
-         8: iload_1       
-         9: invokevirtual #70;                // Method java/util/ArrayList.get:(I)Ljava/lang/Object;
-        12: checkcast     #94;                // class com/descabouda/model/constants/Utf8Constant
-        15: invokevirtual #97;                // Method com/descabouda/model/constants/Utf8Constant.bytes:()[B
-        18: invokespecial #101;               // Method java/lang/String."<init>":([B)V
-        21: areturn       
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0      22     0  this   Lcom/descabouda/model/BaseClass;
-               0      22     1 index   I
-      LineNumberTable:
-        line 37: 0
-      MethodParameters: length = 0x5
-       01 00 3B 00 10 
-
-  public com.descabouda.model.BaseClass();
-    flags: ACC_PUBLIC
-    Code:
-      stack=3, locals=1, args_size=1
-         0: aload_0       
-         1: invokespecial #104;               // Method java/lang/Object."<init>":()V
-         4: aload_0       
-         5: iconst_0      
-         6: putfield      #28;                // Field minorVersion:I
-         9: aload_0       
-        10: iconst_0      
-        11: putfield      #35;                // Field majorVersion:I
-        14: aload_0       
-        15: iconst_0      
-        16: putfield      #38;                // Field accessFlags:I
-        19: aload_0       
-        20: iconst_0      
-        21: putfield      #41;                // Field thisClass:I
-        24: aload_0       
-        25: iconst_0      
-        26: putfield      #44;                // Field superClass:I
-        29: aload_0       
-        30: new           #63;                // class java/util/ArrayList
-        33: dup           
-        34: invokespecial #105;               // Method java/util/ArrayList."<init>":()V
-        37: putfield      #48;                // Field constants:Ljava/util/ArrayList;
-        40: aload_0       
-        41: new           #63;                // class java/util/ArrayList
-        44: dup           
-        45: invokespecial #105;               // Method java/util/ArrayList."<init>":()V
-        48: putfield      #50;                // Field interfaces:Ljava/util/ArrayList;
-        51: aload_0       
-        52: new           #63;                // class java/util/ArrayList
-        55: dup           
-        56: invokespecial #105;               // Method java/util/ArrayList."<init>":()V
-        59: putfield      #52;                // Field fields:Ljava/util/ArrayList;
-        62: aload_0       
-        63: new           #63;                // class java/util/ArrayList
-        66: dup           
-        67: invokespecial #105;               // Method java/util/ArrayList."<init>":()V
-        70: putfield      #54;                // Field methods:Ljava/util/ArrayList;
-        73: aload_0       
-        74: new           #63;                // class java/util/ArrayList
-        77: dup           
-        78: invokespecial #105;               // Method java/util/ArrayList."<init>":()V
-        81: putfield      #56;                // Field attributes:Ljava/util/ArrayList;
-        84: return        
-      LocalVariableTable:
-        Start  Length  Slot  Name   Signature
-               0      85     0  this   Lcom/descabouda/model/BaseClass;
-      LineNumberTable:
-        line 39: 0
-        line 8: 4
-        line 9: 9
-        line 10: 14
-        line 11: 19
-        line 12: 24
-        line 14: 29
-        line 15: 40
-        line 16: 51
-        line 17: 62
-        line 18: 73
-        line 7: 84
-}

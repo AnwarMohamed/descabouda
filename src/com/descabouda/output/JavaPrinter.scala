@@ -2,7 +2,7 @@ package com.descabouda.output
 
 import java.io.OutputStream
 
-import com.descabouda.models.{OutputClass, OutputMethod}
+import com.descabouda.models.{OutputClass, OutputField, OutputMethod}
 import com.descabouda.models.attributes.SourceFileAttribute
 import com.descabouda.models.attributes.critical.RuntimeVisibleAnnotationsAttribute
 import com.descabouda.models.constants._
@@ -42,13 +42,43 @@ class JavaPrinter(input: OutputClass) {
     if (method.abstractFlag)
       print("abstract ")
 
+    if (method.finalFlag)
+      print("final ")
+
+    if (method.staticFlag)
+      print("static ")
+
     println(method.name + " " + method.descriptor)
+  }
+
+  def printFields(): Unit =
+    inputClass.fields.forEach((field) => printField(field))
+
+  def printField(field: OutputField): Unit = {
+    print(" " * 2)
+
+    if (field.publicFlag)
+      print("public ")
+    else if (field.privateFlag)
+      print("private ")
+    else if (field.protectedFlag)
+      print("protected ")
+
+    if (field.finalFlag)
+      print("final ")
+
+    if (field.staticFlag)
+      print("static ")
+
+    println(field.returnType + " " + field.name + ";")
   }
 
   def printClass(): Unit = {
     printClassHeader()
-
     println(" {")
+    printFields()
+    println()
+    printMethods()
     println("}")
   }
 }

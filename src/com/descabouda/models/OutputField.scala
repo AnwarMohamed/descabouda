@@ -14,6 +14,8 @@ class OutputField {
   var enumFlag: Boolean = false
 
   var name: String = null
+  var descriptor: String = null
+  var returnType: String = null
 
   var attributes = Map[String, OutputAttribute]()
 }

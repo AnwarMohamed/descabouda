@@ -34,24 +34,4 @@ class BaseClass {
   def getUtf8(index: Int): String = {
     new String(constants.get(index).asInstanceOf[Utf8Constant].bytes)
   }
-
-  final val descriptorPattern = "\\((.*?)\\)(.*?)$".r
-  final val descriptorMap = (
-    "B" -> "byte", "C" -> "char", "D" -> "double",
-    "F" -> "float", "I" -> "int", "J" -> "long",
-    "S" -> "short", "Z" -> "boolean")
-
-  def getParameterDescriptor(descriptor: String): String = {
-    descriptorPattern.findAllMatchIn(descriptor).foreach { m => m.group(1) }
-    null
-  }
-
-  def getReturnDescriptor(descriptor: String): String = {
-    descriptorPattern.findAllMatchIn(descriptor).foreach { m => m.group(2) }
-    null
-  }
-
-  def parseDescriptor(descriptor: String): Array[String] = {
-    null
-  }
 }

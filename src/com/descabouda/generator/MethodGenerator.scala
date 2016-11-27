@@ -1,6 +1,7 @@
 package com.descabouda.generator
 
 import com.descabouda.models._
+import com.descabouda.utils.DescriptorUtils
 
 class MethodGenerator {
   final val ACC_PUBLIC: Short = 0x0001	      // Declared public; may be accessed from outside its package.
@@ -35,8 +36,11 @@ class MethodGenerator {
     if (method.nameIndex > 0)
       outputMethod.name = baseClass.getUtf8(method.nameIndex - 1)
 
-    if (method.descriptorIndex > 0)
+    if (method.descriptorIndex > 0) {
       outputMethod.descriptor = baseClass.getUtf8(method.descriptorIndex - 1)
+      outputMethod.parametersType = DescriptorUtils.getParameters(outputMethod.descriptor)
+      outputMethod.returnType = DescriptorUtils.getReturn(outputMethod.descriptor, field = false)
+    }
 
     generateAttributes(baseClass, method, outputMethod)
     outputMethod

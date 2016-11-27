@@ -18,6 +18,8 @@ class OutputMethod {
 
   var name: String = null
   var descriptor: String = null
+  var returnType: String = null
+  var parametersType: util.ArrayList[String] = null
 
   var attributes = Map[String, OutputAttribute]()
 }

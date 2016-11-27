@@ -1,6 +1,7 @@
 package com.descabouda.generator
 
 import com.descabouda.models._
+import com.descabouda.utils.DescriptorUtils
 
 class FieldGenerator {
   final val ACC_PUBLIC: Short = 0x0001	  // Declared public; may be accessed from outside its package.
@@ -28,6 +29,11 @@ class FieldGenerator {
 
     if (field.nameIndex > 0)
       outputField.name = baseClass.getUtf8(field.nameIndex - 1)
+
+    if (field.descriptorIndex > 0) {
+      outputField.descriptor = baseClass.getUtf8(field.descriptorIndex - 1)
+      outputField.returnType = DescriptorUtils.getReturn(outputField.descriptor, field = true)
+    }
 
     generateAttributes(baseClass, field, outputField)
     outputField

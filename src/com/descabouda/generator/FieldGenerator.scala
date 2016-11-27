@@ -16,6 +16,7 @@ class FieldGenerator {
 
   def generate(baseClass: BaseClass, field: BaseField): OutputField = {
     val outputField = new OutputField()
+    outputField.raw = field
 
     outputField.publicFlag = (field.accessFlags & ACC_PUBLIC) == ACC_PUBLIC
     outputField.privateFlag = (field.accessFlags & ACC_PRIVATE) == ACC_PRIVATE

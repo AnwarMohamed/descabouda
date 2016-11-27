@@ -19,6 +19,7 @@ class MethodGenerator {
 
   def generate(baseClass: BaseClass, method: BaseMethod): OutputMethod = {
     val outputMethod = new OutputMethod()
+    outputMethod.raw = method
 
     outputMethod.publicFlag = (method.accessFlags & ACC_PUBLIC) == ACC_PUBLIC
     outputMethod.privateFlag = (method.accessFlags & ACC_PRIVATE) == ACC_PRIVATE

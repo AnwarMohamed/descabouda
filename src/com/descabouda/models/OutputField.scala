@@ -18,4 +18,5 @@ class OutputField {
   var returnType: String = null
 
   var attributes = Map[String, OutputAttribute]()
+  var raw: BaseField = null
 }

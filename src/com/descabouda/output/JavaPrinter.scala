@@ -1,11 +1,6 @@
 package com.descabouda.output
 
-import java.io.OutputStream
-
 import com.descabouda.models.{OutputClass, OutputField, OutputMethod}
-import com.descabouda.models.attributes.SourceFileAttribute
-import com.descabouda.models.attributes.critical.RuntimeVisibleAnnotationsAttribute
-import com.descabouda.models.constants._
 
 class JavaPrinter(input: OutputClass) {
   val inputClass: OutputClass = input
@@ -27,6 +22,10 @@ class JavaPrinter(input: OutputClass) {
 
   def printMethod(method: OutputMethod): Unit = {
     printMethodHeader(method)
+    println(" {")
+
+    println(" " * 2 + "}")
+    println()
   }
 
   def printMethodHeader(method: OutputMethod): Unit = {
@@ -48,7 +47,11 @@ class JavaPrinter(input: OutputClass) {
     if (method.staticFlag)
       print("static ")
 
-    println(method.name + " " + method.descriptor)
+    print(method.returnType + " " + method.name)
+
+    print("(")
+    print(method.parametersType.toArray.mkString(", "))
+    print(")")
   }
 
   def printFields(): Unit =

@@ -23,6 +23,7 @@ class MethodParametersAttribute extends OutputAttribute {
       val methodParameter = new MethodParameter()
 
       methodParameter.nameIndex = infoStream.readUnsignedShort()
+      methodParameter.nameString = baseClass.getUtf8(methodParameter.nameIndex - 1)
       methodParameter.accessFlags = infoStream.readUnsignedShort()
 
       methodParameter.finalFlag = (methodParameter.accessFlags & ACC_FINAL) == ACC_FINAL
@@ -38,6 +39,7 @@ class MethodParametersAttribute extends OutputAttribute {
 
  class MethodParameter {
    var nameIndex: Int = 0
+   var nameString: String = null
    var accessFlags: Int = 0
 
    var finalFlag: Boolean = false

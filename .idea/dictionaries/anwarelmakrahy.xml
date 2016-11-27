@@ -2,11 +2,14 @@
   <dictionary name="anwarelmakrahy">
     <words>
       <w>aaload</w>
+      <w>aastore</w>
       <w>abouda</w>
+      <w>aload</w>
       <w>descabouda</w>
       <w>fieldref</w>
       <w>methodref</w>
       <w>smali</w>
+      <w>tableswitch</w>
     </words>
   </dictionary>
 </component>

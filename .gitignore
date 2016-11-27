@@ -2,6 +2,8 @@
 *.log
 *.javap
 
+listing
+
 # sbt specific
 .cache
 .history

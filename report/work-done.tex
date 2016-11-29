@@ -1,0 +1,86 @@
+\chapter{Work Done}
+
+\section{Disassembler Implementation}
+
+\subsection{Basic Blocks}
+
+\begin{lstlisting}
+ClassFile {
+    u4             magic;
+    u2             minor_version;
+    u2             major_version;
+    u2             constant_pool_count;
+    cp_info        constant_pool[constant_pool_count-1];
+    u2             access_flags;
+    u2             this_class;
+    u2             super_class;
+    u2             interfaces_count;
+    u2             interfaces[interfaces_count];
+    u2             fields_count;
+    field_info     fields[fields_count];
+    u2             methods_count;
+    method_info    methods[methods_count];
+}
+
+field_info {
+    u2             access_flags;
+    u2             name_index;
+    u2             descriptor_index;
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+
+method_info {
+    u2             access_flags;
+    u2             name_index;
+    u2             descriptor_index;
+    u2             attributes_count;
+    attribute_info attributes[attributes_count];
+}
+\end{lstlisting}
+
+\subsection{Decoders}
+Decoders are used to decode the jvm bytecode into an intermediate form. Currently theses decoders are implemented:
+
+\begin{itemize}
+	\itemsep-0.3em 
+	\item Attributes Decoder
+	\item Class Decoder
+	\item Codes Decoder
+	\item Constants Decoder
+	\item Fields Decoder
+	\item Methods Decoder
+	\item Interfaces Decoder
+\end{itemize}
+
+\subsection{Jasmin Printer}
+Jasmin Printer is used to print the java disassembly codes, constant pool, fields, methods of the disassembled class.
+
+\section{Decompiler Implementation}
+
+\subsection{Generators}
+Generators are used to transform the IR structures into a high-level java code. Currently theses generators are implemented:
+
+\begin{itemize}
+	\itemsep-0.3em 
+	\item Attribute Generator	
+	\item Class Generator
+	\item Field Generator
+	\item Method Generator
+\end{itemize}
+
+\subsection{Java Printer}
+Java Printer is used to print the java high-level codes, class definition, fields, methods of the decompiled class.
+
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{./game1}
+%\hspace*{0.1em}
+%\includegraphics[width=0.45\textwidth]{./game2}
+%
+%\includegraphics[width=0.9\textwidth]{./game3}
+%\vspace*{0.3em}
+%
+%\includegraphics[width=0.45\textwidth]{./game4}
+%\hspace*{0.1em}
+%\includegraphics[width=0.45\textwidth]{./game5}
+%\end{center}

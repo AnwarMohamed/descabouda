@@ -1,0 +1,43 @@
+\chapter{Introduction}
+
+\section{Decompiler Definition}
+
+To begin, let's start by defining what it means by \emph{a decompiler}: \\ 
+
+A decompiler is a computer program that takes an executable file as input, and attempts to create a high level source file which can be recompiled successfully. It is therefore the opposite of a compiler, which takes a source file and makes an executable. Decompilers are usually unable to perfectly reconstruct the original source code, and as such, will frequently produce obfuscated code.
+
+\section{Decompiler Design}
+
+Decompilers can be thought of as composed of a series of phases each of which contributes specific aspects of the overall decompilation process.
+
+\subsection{Loader}
+
+The first decompilation phase loads and parses the input machine code or intermediate language program's binary file format. It should be able to discover basic facts about the input program, such as the jvm version and the entry point. In many cases, it should be able to find the main function of a scala program, which is the start of the user written code.
+
+\subsection{Disassembly}
+
+The next logical phase is the disassembly of machine code instructions into a machine independent intermediate representation (IR).
+
+\subsection{Idioms}
+
+Idiomatic machine code sequences are sequences of code whose combined semantics is not immediately apparent from the instructions' individual semantics. Either as part of the disassembly phase, or as part of later analyses, these idiomatic sequences need to be translated into known equivalent IR.
+
+\subsection{Program analysis}
+
+Various program analyses can be applied to the IR. In particular, expression propagation combines the semantics of several instructions into more complex expressions.
+
+\subsection{Data flow analysis}
+
+The places where register contents are defined and used must be traced using data flow analysis. The same analysis can be applied to locations that are used for temporaries and local data. A different name can then be formed for each such connected set of value definitions and uses. It is possible that the same local variable location was used for more than one variable in different parts of the original program.
+
+\subsection{Type analysis}
+
+A good machine code decompiler will perform type analysis. Here, the way registers or memory locations are used result in constraints on the possible type of the location.
+
+\subsection{Structuring}
+
+The penultimate decompilation phase involves structuring of the IR into higher level constructs such as while loops and if/then/else conditional statements.
+
+\subsection{Code generation}
+
+The final phase is the generation of the high level code in the back end of the decompiler. Just as a compiler may have several back ends for generating machine code for different architectures, a decompiler may have several back ends for generating high level code in different high level languages.

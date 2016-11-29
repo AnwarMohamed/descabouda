@@ -10,6 +10,9 @@ class JavaPrinter(input: OutputClass) {
     if (inputClass.publicFlag)
       print("public ")
 
+    if (inputClass.finalFlag)
+      print("final ")
+
     if (inputClass.interfaceFlag)
       print("interface ")
     else

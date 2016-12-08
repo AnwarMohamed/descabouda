@@ -1,31 +1,38 @@
 package com.descabouda.generator
 
+import com.descabouda.decoder.ClassDecoderException
 import com.descabouda.models.constants.{ClassConstant, Utf8Constant}
 import com.descabouda.models._
 
-
 class ClassGenerator {
-  final val ACC_PUBLIC: Short = 0x0001	    // Declared public; may be accessed from outside its package.
-  final val ACC_FINAL: Short = 0x0010	      // Declared final; no subclasses allowed.
-  final val ACC_SUPER: Short = 0x0020	      // Treat superclass methods specially when invoked by the
-                                            // invoke special instruction.
-  final val ACC_INTERFACE: Short = 0x0200	  // Is an interface, not a class.
-  final val ACC_ABSTRACT: Short = 0x0400	  // Declared abstract; must not be instantiated.
-  final val ACC_SYNTHETIC: Short = 0x1000	  // Declared synthetic; not present in the source code.
-  final val ACC_ANNOTATION: Short = 0x2000	// Declared as an annotation type.
-  final val ACC_ENUM: Short = 0x4000	      // Declared as an enum type.
+  final val ACC_PUBLIC: Short = 0x0001 // Declared public; may be accessed from outside its package.
+  final val ACC_FINAL: Short = 0x0010 // Declared final; no subclasses allowed.
+  final val ACC_SUPER: Short = 0x0020 // Treat superclass methods specially when invoked by the
+  // invoke special instruction.
+  final val ACC_INTERFACE: Short = 0x0200 // Is an interface, not a class.
+  final val ACC_ABSTRACT: Short = 0x0400 // Declared abstract; must not be instantiated.
+  final val ACC_SYNTHETIC: Short = 0x1000 // Declared synthetic; not present in the source code.
+  final val ACC_ANNOTATION: Short = 0x2000 // Declared as an annotation type.
+  final val ACC_ENUM: Short = 0x4000 // Declared as an enum type.
 
   def generate(baseClass: BaseClass): OutputClass = {
-    val outputClass = new OutputClass()
-    outputClass.raw = baseClass
+    try {
 
-    generateClass(baseClass, outputClass)
-    generateInterfaces(baseClass, outputClass)
-    generateFields(baseClass, outputClass)
-    generateMethods(baseClass, outputClass)
-    generateAttributes(baseClass, outputClass)
+      val outputClass = new OutputClass()
+      outputClass.raw = baseClass
 
-    outputClass
+      generateClass(baseClass, outputClass)
+      generateInterfaces(baseClass, outputClass)
+      generateFields(baseClass, outputClass)
+      generateMethods(baseClass, outputClass)
+      generateAttributes(baseClass, outputClass)
+
+      outputClass
+
+    } catch {
+      case ex: Exception =>
+        throw new ClassGeneratorException("Generation error")
+    }
   }
 
   def generateClass(baseClass: BaseClass, outputClass: OutputClass): Unit = {
@@ -45,11 +52,13 @@ class ClassGenerator {
       outputClass.superName = baseClass.getClassName(baseClass.superClass - 1)
   }
 
-  def generateInterfaces(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+  def generateInterfaces(baseClass: BaseClass,
+                         outputClass: OutputClass): Unit = {
     val interfacesIt = baseClass.interfaces.iterator
-    while(interfacesIt.hasNext) {
-      outputClass.interfaces.add(baseClass.getClassName(
-        interfacesIt.asInstanceOf[BaseInterface].poolIndex - 1))
+    while (interfacesIt.hasNext) {
+      outputClass.interfaces.add(
+        baseClass.getClassName(
+          interfacesIt.asInstanceOf[BaseInterface].poolIndex - 1))
     }
   }
 
@@ -67,7 +76,8 @@ class ClassGenerator {
     })
   }
 
-  def generateAttributes(baseClass: BaseClass, outputClass: OutputClass): Unit = {
+  def generateAttributes(baseClass: BaseClass,
+                         outputClass: OutputClass): Unit = {
     val attributeGenerator = new AttributeGenerator()
     baseClass.attributes.forEach((attribute) => {
       val outputAttribute = attributeGenerator.generate(baseClass, attribute)

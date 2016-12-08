@@ -1,24 +1,29 @@
 package com.descabouda.decoder
 
 import com.descabouda.input.ClassInputStream
-import com.descabouda.models.{BaseClass, BaseConstant}
+import com.descabouda.models.BaseClass
 
 class ClassDecoder {
   def decode(classStream: ClassInputStream): BaseClass = {
-    val classModel = new BaseClass()
+    try {
+      val classModel = new BaseClass()
 
-    decodeMagic(classStream, classModel)
-    decodeVersion(classStream, classModel)
+      decodeMagic(classStream, classModel)
+      decodeVersion(classStream, classModel)
 
-    decodeConstantPool(classStream, classModel)
-    decodeMetaData(classStream, classModel)
+      decodeConstantPool(classStream, classModel)
+      decodeMetaData(classStream, classModel)
 
-    decodeInterfaces(classStream, classModel)
-    decodeFields(classStream, classModel)
-    decodeMethods(classStream, classModel)
-    decodeAttributes(classStream, classModel)
+      decodeInterfaces(classStream, classModel)
+      decodeFields(classStream, classModel)
+      decodeMethods(classStream, classModel)
+      decodeAttributes(classStream, classModel)
 
-    classModel
+      classModel
+    } catch {
+      case ex: Exception =>
+        throw new ClassDecoderException("Decoding error")
+    }
   }
 
   def decodeMagic(classStream: ClassInputStream, classModel: BaseClass) = {
